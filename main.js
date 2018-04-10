@@ -28,10 +28,16 @@ prompt.delimiter = colors.green(': ')
 prompt.start();
 
 prompt.get(schema, function (err, result) {
-  console.log('Command-line input received:');
-  console.log('  branch_version: ' + result.branch_version);
-  console.log('  feature_label: ' + result.feature_label);
-  console.log('  JIRA_number: ' + result.JIRA_number);
-  console.log('  dev_label: ' + result.dev_label);
+  
+  const feature_label = result.feature_label ? '#' + result.feature_label : ''
+  const full_name = [
+    result.branch_version, 
+    feature_label,
+    result.JIRA_number,
+    result.dev_label
+  ].join('_');
+
+  console.log('  full_name: ' + full_name);
+
 });
 
