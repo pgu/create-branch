@@ -50,6 +50,6 @@ prompt.get(schema, (err, result) => {
   console.log('🍺  Full name: ' + colors.bgGreen(colors.black(' ' + full_name + ' ')));
   console.log('-------------');
 
-  //shell.exec('git checkout -b ' + full_name)
+  shell.exec('git checkout -b ' + full_name)
 });
 
