@@ -1,19 +1,28 @@
 const prompt = require('prompt');
 
+const schema = {
+  branch_version: {
+    pattern: /^[0-9]+[0-9\.]*[0-9]+$/,
+    message: 'branch_version must be only digits with dots',
+    required: true
+  },
+  feature_label: {
+    pattern: /^[a-zA-Z0-9\-]+$/,
+    message: 'feature_label must be only letters, digits, or dashes'
+  },
+  JIRA_number: {
+    pattern: /^[0-9]+$/,
+    message: 'JIRA_number must be only digits'
+  },
+  dev_label: {
+    pattern: /^[a-zA-Z0-9\-]+$/,
+    message: 'feature_label must be only letters, digits, or dashes'
+  }
+}
 
-
-//
-// Start the prompt
-//
 prompt.start();
 
-//
-// Get two properties from the user: username and email
-//
-prompt.get(['branch_version', 'feature_label', 'JIRA_number', 'dev_label'], function (err, result) {
-  //
-  // Log the results.
-  //
+prompt.get(schema, function (err, result) {
   console.log('Command-line input received:');
   console.log('  branch_version: ' + result.branch_version);
   console.log('  feature_label: ' + result.feature_label);
