@@ -27,7 +27,7 @@ prompt.message = '🍺';
 prompt.delimiter = colors.green(': ')
 prompt.start();
 
-prompt.get(schema, function (err, result) {
+prompt.get(schema, (err, result) => {
   
   const feature_label = result.feature_label ? '#' + result.feature_label : ''
   const full_name = [
@@ -35,7 +35,8 @@ prompt.get(schema, function (err, result) {
     feature_label,
     result.JIRA_number,
     result.dev_label
-  ].join('_');
+  ].filter(v => !!v)
+  .join('_');
 
   console.log('  full_name: ' + full_name);
 
