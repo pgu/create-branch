@@ -38,7 +38,7 @@ prompt.get(schema, (err, result) => {
   ].filter(v => !!v)
   .join('_');
 
-  console.log('  full_name: ' + full_name);
+  console.log('  Full name: ' + full_name);
 
 });
 
