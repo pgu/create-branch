@@ -46,9 +46,8 @@ prompt.get(schema, (err, result) => {
   ].filter(v => !!v)
   .join('_');
 
-  console.log('  Full name: ' + full_name);
+  console.log('  Full name: ' + colors.bgGreen(colors.black(' ' + full_name + ' ')));
 
   shell.exec('git checkout -b ' + full_name)
-
 });
 
