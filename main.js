@@ -23,8 +23,8 @@ const schema = {
   }
 }
 
-prompt.message = colors.green('$')
-prompt.delimiter = colors.green('>')
+prompt.message = '🍺';
+prompt.delimiter = colors.green(': ')
 prompt.start();
 
 prompt.get(schema, function (err, result) {
