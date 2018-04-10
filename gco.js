@@ -31,7 +31,7 @@ const schema = {
   }
 }
 
-prompt.message = '🍺';
+prompt.message = '-';
 prompt.delimiter = colors.green(': ')
 prompt.start();
 
@@ -46,8 +46,10 @@ prompt.get(schema, (err, result) => {
   ].filter(v => !!v)
   .join('_');
 
-  console.log('  Full name: ' + colors.bgGreen(colors.black(' ' + full_name + ' ')));
+  console.log('-------------');
+  console.log('🍺  Full name: ' + colors.bgGreen(colors.black(' ' + full_name + ' ')));
+  console.log('-------------');
 
-  shell.exec('git checkout -b ' + full_name)
+  //shell.exec('git checkout -b ' + full_name)
 });
 
