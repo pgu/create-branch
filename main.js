@@ -1,4 +1,5 @@
 const prompt = require('prompt');
+const colors = require('colors/safe');
 
 const schema = {
   properties: {
@@ -22,6 +23,8 @@ const schema = {
   }
 }
 
+prompt.message = colors.green('$')
+prompt.delimiter = colors.green('>')
 prompt.start();
 
 prompt.get(schema, function (err, result) {
