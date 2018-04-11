@@ -12,8 +12,8 @@ if (!shell.which('git')) {
 const schema = {
   properties: {
     branch_version: {
-      pattern: /^[0-9]+[0-9\.]*[0-9]+$/,
-      message: 'branch_version must be only digits with dots',
+      pattern: /^([0-9]+([0-9\.]*[0-9]+)*|master)$/,
+      message: 'branch_version must be only digits with dots or \'master\'',
       required: true
     },
     feature_label: {
