@@ -37,6 +37,11 @@ prompt.start();
 
 prompt.get(schema, (err, result) => {
   
+  if (err) {
+    console.error(err);
+    shell.exit(1);
+  }
+
   const feature_label = result.feature_label ? '#' + result.feature_label : ''
   const full_name = [
     result.branch_version, 
