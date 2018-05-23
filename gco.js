@@ -26,7 +26,7 @@ const schema = {
     },
     dev_label: {
       pattern: /^[a-zA-Z0-9\-]+$/,
-      message: 'feature_label must be only letters, digits, or dashes'
+      message: 'dev_label must be only letters, digits, or dashes'
     }
   }
 }
